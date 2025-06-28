@@ -7,9 +7,9 @@ const countryFeedback = document.getElementById("countryFeedback");
 const submitBtn = document.getElementById("submitBtn");
 const myForm = document.getElementById("myForm");
 
-let nameFormat = /^[a-z]+$/;
+let nameFormat = /^[A-Z][a-z]+$/;
 let emailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-let countryFormat = /^[a-zA-Z]+$/;
+let countryFormat = /^[A-Za-z]+$/;
 let ageFormat = /^[0-9]+$/;
 
 myForm.addEventListener("submit", (e) => {
@@ -19,6 +19,30 @@ myForm.addEventListener("submit", (e) => {
     let yourCountry = document.getElementById("yourCountry").value;
 
     e.preventDefault();
+    let hasError = false;
+     if(yourName===""){
+        nameFeedback.textContent= "Enter a name";
+        nameFeedback.style.color = "red";
+        hasError = true;
+    }
+    if(yourAge === ""){
+        ageFeedback.textContent = "Enter age";
+        ageFeedback.style.color = "red";
+        hasError = true;
+    }
+    if(yourEmail === ""){
+        emailFeedback.textContent = "Enter email";
+        emailFeedback.style.color = "red";
+        hasError = true;
+    }
+    if(yourCountry === ""){
+        countryFeedback.textContent = "Enter country";
+        countryFeedback.style.color = "red";
+        hasError = true;
+    }
+   
+    if(hasError) return;
+
     // conditionals for checking name
     if(yourName.match(nameFormat) && yourName.length < 5){
         nameFeedback.textContent = "Name must be at least 5 characters long";
@@ -29,7 +53,7 @@ myForm.addEventListener("submit", (e) => {
         nameFeedback.style.color = "red";
     } 
     else if(!yourName.match(nameFormat)){
-        nameFeedback.textContent = "Name must be in lowercase only";
+        nameFeedback.textContent = "Name must begin with uppercase";
         nameFeedback.style.color = "red";
     }
      else {
@@ -39,7 +63,7 @@ myForm.addEventListener("submit", (e) => {
 
     // conditionals for checking email
     if(!yourEmail.match(emailFormat)){
-        emailFeedback.textContent = "Invalid email";
+        emailFeedback.textContent = "Email must follow placeholder format!";
         emailFeedback.style.color = "red";
     } else{
         emailFeedback.textContent = "Email is valid";
@@ -65,11 +89,11 @@ myForm.addEventListener("submit", (e) => {
 
     // conditionals for checking country
     if(!yourCountry.match(countryFormat)){
-        countryFeedback.textContent = "Country must start with Uppercase!";
+        countryFeedback.textContent = "Select a Country!";
         countryFeedback.style.color = "red";
     }
     else{
-        countryFeedback.textContent = "'Country is okay";
+        countryFeedback.textContent = "Country is okay";
         countryFeedback.style.color = "green";
     }
 
