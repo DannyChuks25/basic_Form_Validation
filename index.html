@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATION</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="myForm">
+            <h1>User Form</h1>
+            <div class="input">
+                <input id="yourName" type="text" placeholder="Enter name">
+                <div id="nameFeedback" class="feedback"></div>
+            </div>
+            <div class="input">
+                <input id="yourAge" type="text" placeholder="Enter age">
+                <div id="ageFeedback" class="feedback"></div>
+            </div>
+            <div class="input">
+                <input id="yourEmail" type="text" placeholder="Enter email">
+                <div id="emailFeedback" class="feedback"></div>
+            </div>
+            <div class="input">
+                <select name="" id="yourCountry">
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="America">America</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Germany">Germany</option>
+                        <option value="China">China</option>
+                </select>
+                <div id="countryFeedback" class="feedback"></div>
+            </div>
+            <div class="input submitCtn">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
