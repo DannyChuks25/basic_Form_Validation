@@ -7,7 +7,7 @@ const countryFeedback = document.getElementById("countryFeedback");
 const submitBtn = document.getElementById("submitBtn");
 const myForm = document.getElementById("myForm");
 
-let nameFormat = /^[A-Z][a-z]+$/;
+let nameFormat = /^[A-Z][a-z]+ [A-Z][a-z]+$/;
 let emailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 let countryFormat = /^[A-Za-z]+$/;
 let ageFormat = /^[0-9]+$/;
