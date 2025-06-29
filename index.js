@@ -19,29 +19,10 @@ myForm.addEventListener("submit", (e) => {
     let yourCountry = document.getElementById("yourCountry").value;
 
     e.preventDefault();
-    let hasError = false;
-     if(yourName===""){
-        nameFeedback.textContent= "Enter a name";
-        nameFeedback.style.color = "red";
-        hasError = true;
-    }
-    if(yourAge === ""){
-        ageFeedback.textContent = "Enter age";
-        ageFeedback.style.color = "red";
-        hasError = true;
-    }
-    if(yourEmail === ""){
-        emailFeedback.textContent = "Enter email";
-        emailFeedback.style.color = "red";
-        hasError = true;
-    }
-    if(yourCountry === ""){
-        countryFeedback.textContent = "Enter country";
-        countryFeedback.style.color = "red";
-        hasError = true;
-    }
+    console.log(yourName);
+    
    
-    if(hasError) return;
+    //f(hasError) return;
 
     // conditionals for checking name
     if(yourName.match(nameFormat) && yourName.length < 5){
@@ -95,6 +76,38 @@ myForm.addEventListener("submit", (e) => {
     else{
         countryFeedback.textContent = "Country is okay";
         countryFeedback.style.color = "green";
+    }
+
+    let splitName = yourName.split(" ");
+
+    let hasError = false;
+
+    console.log(splitName);
+    if(splitName.length < 2){
+        nameFeedback.textContent = "Enter last name";
+        nameFeedback.style.color = "red";
+        hasError = true;
+    }
+    
+     if(yourName===""){
+        nameFeedback.textContent= "Enter a name";
+        nameFeedback.style.color = "red";
+        hasError = true;
+    }
+    if(yourAge === ""){
+        ageFeedback.textContent = "Enter age";
+        ageFeedback.style.color = "red";
+        hasError = true;
+    }
+    if(yourEmail === ""){
+        emailFeedback.textContent = "Enter email";
+        emailFeedback.style.color = "red";
+        hasError = true;
+    }
+    if(yourCountry === ""){
+        countryFeedback.textContent = "Enter country";
+        countryFeedback.style.color = "red";
+        hasError = true;
     }
 
 });
