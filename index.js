@@ -13,10 +13,10 @@ let countryFormat = /^[A-Za-z]+$/;
 let ageFormat = /^[0-9]+$/;
 
 myForm.addEventListener("submit", (e) => {
-    let yourName = document.getElementById("yourName").value;
-    let yourAge = document.getElementById("yourAge").value;
-    let yourEmail = document.getElementById("yourEmail").value;
-    let yourCountry = document.getElementById("yourCountry").value;
+    let yourName = document.getElementById("yourName").value.trim();
+    let yourAge = document.getElementById("yourAge").value.trim();
+    let yourEmail = document.getElementById("yourEmail").value.trim();
+    let yourCountry = document.getElementById("yourCountry").value.trim();
 
     e.preventDefault();
     console.log(yourName);
